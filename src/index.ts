@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 app.use(express.json())
 app.use(cors())
 
-app.get("/api/notes", async (req, res) => {
+app.get("/api/notes", async (req, res) =>{
     const notes = await prisma.note.findMany();
 
     res.json(notes);
@@ -60,7 +60,27 @@ app.put("/api/notes/:id", async (req, res)=> {
         res
             .status(500)
             .send("somthing went wrong");
+    }
+})
 
+app.delete("/api/notes/:id", async (req, res)=> {
+    const id = parseInt(req.params.id);
+
+    if (!id || isNaN(id)) {
+        return res
+            .status(400)
+            .send("ID must be vaild intergar");
+    }
+
+    try {
+        await prisma.note.delete({
+            where: { id }
+        })
+        res.status(204).send();
+    } catch (error) {
+        res
+            .status(500)
+            .send("Somthing went wrong");
     }
 })
 
