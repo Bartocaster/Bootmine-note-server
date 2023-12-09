@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "mysql"
+  url      = "mysql://root:Bart_Data_Base7@127.0.0.1:3306/notes?schema=notes"
 }
 
 model Note {
