@@ -1,0 +1,14 @@
+to create your database in mysql execute this code:
+CREATE TABLE `note` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(30) NOT NULL,
+  `content` varchar(144) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3
+
+to add a new entry:
+INSERT INTO `notes`.`note` (`id`, `title`, `content`) VALUES ('3', 'somthing new', 'its allowed to be empty');
+
+
+(google creat a shell command to exucute mysql.)
