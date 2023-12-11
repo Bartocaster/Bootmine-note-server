@@ -1,3 +1,6 @@
+make user that in the .env file you have setup your
+DATABASE_URL=mysql://--your username--:--your password--@--yourIPadress--:--yourport--/notes?schema=note
+
 to create your local database in mysql execute this code:
 to setup the table note:
 

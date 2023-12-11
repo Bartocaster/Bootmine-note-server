@@ -7,7 +7,8 @@ generator client {
 
   // in case you use the DB base with the link i gave you and uncomment the postgresql provider 
   // and the DATBASE_URL="given link" 
-  // provider = "postgresql"
+  // provider = "postgresql" (for the server link i gave you);
+  // provider = "mysql" if you use your local DataBase)
   // if you switch up provider don't forget to do the command: npx prisma generate 
   // to regenerate or else the database think your stil useing the old one
 datasource db {
